@@ -27,7 +27,7 @@ class Player {
     constructor(position){
         this.position = position
         this.velocity = {x: 0, y: 0}
-        this.height = 200
+        this.height = 100
         this.isOnGround = false
         this.jumpCount = 0
     }
