@@ -26,7 +26,7 @@ class Sprite {
 class Player {
     constructor(position){
         this.position = position
-        this.velocity = {x: 0, y: 0}
+        this.velocity = {x: 100, y: 100}
         this.height = 100
         this.isOnGround = false
         this.jumpCount = 0
