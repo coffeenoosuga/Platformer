@@ -9,19 +9,24 @@ c.fillStyle = 'red'
 c.fillRect(200, 100, 100, 100)
 
 class Sprite {
-    constructor({position, imageSrc}){
-        this.position = position
-        this.image = new Image()
-        this.image.src = imageSrc
+    constructor({ position, imageSrc }) {
+        this.position = position;
+        this.image = new Image();
+        this.image.src = imageSrc;
+        this.image.onload = () => {
+            this.isLoaded = true;
+        };
     }
-    draw(){
-        if (!this.image) return
-        c.drawImage(this.image, this.position.x, this.position.y)
+    draw() {
+        if (this.isLoaded) {
+            c.drawImage(this.image, this.position.x, this.position.y);
+        }
     }
-    update(){
-        this.draw()
+    update() {
+        this.draw();
     }
 }
+
 
 class Player {
     constructor(position){
